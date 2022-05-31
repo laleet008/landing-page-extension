@@ -1,7 +1,19 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+
 import "./Navbar.css";
+
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const NavItem = ({ label, link }) => {
   const { pathname } = useLocation();
@@ -24,18 +36,24 @@ const NavItem = ({ label, link }) => {
 
 const Navbar = () => {
   return (
-    <nav>
+    <motion.nav
+      whileInView={{ x: [100, 0], opacity: [0, 1] }}
+      transition={{ duration: 0.5, delayChildren: 0.5 }}
+    >
       <Link to="/" style={{ textDecoration: "none" }}>
-        <h2 className="font-poppins">
-          Nin <span className="font-poppins">aya</span>{" "}
+        <h2 className="font-poppins tracking-wide">
+          Nin<span className="font-poppins">aya</span>
         </h2>
       </Link>
-      <ul>
+      <motion.ul
+        variant={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+      >
         <NavItem label="Home" link="/" />
         <NavItem label="Terms & Conditions" link="/terms" />
         <NavItem label="Privacy Policy" link="/privacy" />
-      </ul>
-    </nav>
+      </motion.ul>
+    </motion.nav>
   );
 };
 

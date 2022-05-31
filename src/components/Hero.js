@@ -1,14 +1,19 @@
 import React from "react";
 // import { FiCornerRightDown } from "react-icons/fi";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { motion } from "framer-motion";
 
 import "./Hero.css";
 
 const Hero = () => {
   return (
-    <div className="hero ">
+    <div className="hero">
       <div className="flex justify-center items-center h-full">
-        <div className="text-center mb-10">
+        <motion.div
+          className="text-center mb-10"
+          whileInView={{ opacity: [0, 1] }}
+          transition={{ duration: 0.5, type: "tween" }}
+        >
           <h1 className="uppercase font-bold md:text-5xl text-4xl text-gray-200 font-montserrat tracking-widest	">
             Software makes{" "}
             <span className="text-blue-500 font-montserrat"> easy</span>
@@ -27,7 +32,7 @@ const Hero = () => {
               </button>
             </AnchorLink>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
