@@ -14,7 +14,7 @@ const Hero = () => {
           whileInView={{ opacity: [0, 1] }}
           transition={{ duration: 0.5, type: "tween" }}
         >
-          <h1 className="uppercase font-bold md:text-5xl text-4xl text-gray-200 font-montserrat tracking-widest	">
+          <h1 className="uppercase font-bold md:text-5xl text-4xl text-gray-200 font-montserrat 	">
             Software makes{" "}
             <span className="text-blue-500 font-montserrat"> easy</span>
           </h1>

@@ -36,14 +36,15 @@ const NavItem = ({ label, link }) => {
 
 const Navbar = () => {
   return (
-    <motion.nav
-      whileInView={{ x: [100, 0], opacity: [0, 1] }}
-      transition={{ duration: 0.5, delayChildren: 0.5 }}
-    >
+    <motion.nav>
       <Link to="/" style={{ textDecoration: "none" }}>
-        <h2 className="font-poppins tracking-wide">
+        <motion.h2
+          className="font-poppins tracking-wide"
+          whileInView={{ x: [100, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5, delayChildren: 0.5 }}
+        >
           Nin<span className="font-poppins">aya</span>
-        </h2>
+        </motion.h2>
       </Link>
       <motion.ul
         variant={scaleVariants}
